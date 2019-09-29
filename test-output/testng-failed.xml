@@ -7,6 +7,8 @@
         <methods>
           <include name="beforeEachMethod"/>
           <include name="amazonSearchMusic"/>
+          <include name="amazonMoviesearch"/>
+          <include name="afterEachMethod"/>
         </methods>
       </class> <!-- test.Amazon_Test1 -->
     </classes>

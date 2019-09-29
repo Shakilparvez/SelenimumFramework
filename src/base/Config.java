@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 
 public class Config {
@@ -16,7 +17,7 @@ public class Config {
 	public void beforeEachMethod() {
 		
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
+		driver = new ChromeDriver();
 		driver.get("https://www.amazon.com/");
 		driver.manage().window().maximize();	
 		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
@@ -24,11 +25,12 @@ public class Config {
 	
 	}
 	
-	@AfterMethod
-	
-	public void afterEachMethod() {
-		
-		driver.quit();
+	@AfterTest
+
+	public void afterEachMethod(){
+	//System.out.println("After each method");
+	//System.out.println (" ==========  ");
+	driver.quit();
 	}
 }
 	
